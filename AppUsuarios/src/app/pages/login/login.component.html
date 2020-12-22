@@ -1,0 +1,44 @@
+<div class="form-login">
+  <h3>Iniciar Sesión</h3>
+  <div class="example-container">
+    <form
+      [formGroup]="profileForm"
+      (ngSubmit)="login(LoginForm)"
+      #LoginForm="ngForm"
+    >
+      <mat-form-field appearance="fill" class="form_controls">
+        <mat-label>Enter your username</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Username"
+          formControlName="username"
+          [(ngModel)]="usuario.usuario"
+          required
+        />
+        <mat-error *ngIf="profileForm.get('username').errors?.required">{{
+          getErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill" class="form_controls">
+        <mat-label>Enter your Password</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+          [(ngModel)]="usuario.contrasena"
+          required
+        />
+        <mat-error *ngIf="profileForm.get('password').errors?.required">{{
+          getErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <br />
+      <button mat-raised-button color="primary" type="submit" class="btn-lg">
+        Login
+      </button>
+    </form>
+  </div>
+</div>
