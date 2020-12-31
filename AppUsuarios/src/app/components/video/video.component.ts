@@ -29,12 +29,7 @@ export class VideoComponent implements OnInit, AfterContentInit {
   ngOnInit(): void {}
 
   grabarVideo() {
-    this.device.startCapture(this.$video);
-    this.generarVideo();
-  }
-
-  generarVideo() {
-    this.device.generateRecordingPreview(this.$video2, this.$link);
+    this.device.startCapture(this.$video, this.$video2, this.$link);
   }
 
   detenerVideo() {

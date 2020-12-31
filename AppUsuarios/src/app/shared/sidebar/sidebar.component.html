@@ -20,7 +20,7 @@
       [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56"
     >
-      <mat-nav-list>
+      <mat-nav-list *ngIf="fillerNav.length > 0">
         <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of fillerNav">
           <mat-icon>{{ nav.icon }}</mat-icon> {{ nav.name }}</a
         >

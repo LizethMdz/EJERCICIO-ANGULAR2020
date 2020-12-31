@@ -13,7 +13,7 @@ import { UsuarioResponse } from '../interfaces/usuario.interface';
 })
 export class AuthService {
   public usuario: UsuarioResponse;
-  public usuarioTmp;
+  public usuarioTmp: boolean;
   public autenticado = new EventEmitter<boolean>();
   public endpoint = 'https://ies-webcontent.com.mx/xccm/user';
 

@@ -1,7 +1,15 @@
 import { AuthService } from './../../services/auth.service';
 import { SidebarService } from './../../services/sidebar.service';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { Component, OnDestroy, ChangeDetectorRef, OnInit } from '@angular/core';
+import {
+  Component,
+  OnDestroy,
+  ChangeDetectorRef,
+  OnInit,
+  OnChanges,
+  SimpleChanges,
+  AfterViewChecked,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -26,6 +34,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
+
   ngOnInit(): void {
     this.usuarioService.autenticado.subscribe((texto) => {
       console.log('estado', texto);
@@ -41,11 +50,10 @@ export class SidebarComponent implements OnInit, OnDestroy {
   shouldRun = true;
 
   validarMenu() {
-    console.log('validado', this.estaAuth);
-    if (this.estaAuth) {
+    if (localStorage.getItem('msm') === 'true') {
       return (this.fillerNav = this.sidebarService.menu);
     } else {
-      return [];
+      return (this.fillerNav = []);
     }
   }
 }
