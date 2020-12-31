@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): boolean {
     if (
-      this.usuarioService.autenticado ||
+      //this.usuarioService.autenticado // ||
       localStorage.getItem('msm') === 'true'
     ) {
       return true;

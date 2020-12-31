@@ -16,6 +16,9 @@ import { MaterialModule } from './material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarService } from './services/sidebar.service';
+import { VideoComponent } from './components/video/video.component';
+import { ImagenComponent } from './components/imagen/imagen.component';
+import { DispositivoComponent } from './components/dispositivo/dispositivo.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { SidebarService } from './services/sidebar.service';
     DashboardComponent,
     ComponenteUnoComponent,
     LoginComponent,
+    VideoComponent,
+    ImagenComponent,
+    DispositivoComponent,
   ],
   imports: [
     BrowserModule,

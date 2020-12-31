@@ -7,6 +7,9 @@ export class SidebarService {
   menu = [
     { name: 'Dashboard', route: 'dashboard', icon: 'dashboard' },
     { name: 'Exercises', route: 'exercises', icon: 'calculate' },
+    { name: 'Grabar Video', route: 'video', icon: 'movie' },
+    { name: 'Dirección ', route: 'imagen', icon: 'image' },
+    { name: 'Dispositivo', route: 'dispositivo', icon: 'device_unknown' },
     { name: 'Logout', route: 'login', icon: 'clear' },
   ];
 }

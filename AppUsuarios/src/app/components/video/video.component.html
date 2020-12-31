@@ -1,0 +1,32 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Información del dispositivo</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>Se grabará un video</p>
+    <video id="webcam"></video>
+    <video id="webcam-output" controls autoplay></video>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <p id="btnDuracion">Duración:</p>
+    <button
+      (click)="grabarVideo()"
+      id="btnGrabar"
+      mat-raised-button
+      color="primary"
+    >
+      Grabar
+    </button>
+    <button
+      (click)="detenerVideo()"
+      id="btnDetener"
+      mat-raised-button
+      color="accent"
+    >
+      Detener
+    </button>
+    <a id="video-downloaded" mat-raised-button color="warn">Descargar</a>
+  </mat-card-actions>
+</mat-card>
