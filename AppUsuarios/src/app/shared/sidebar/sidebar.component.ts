@@ -1,17 +1,7 @@
 import { AuthService } from './../../services/auth.service';
 import { SidebarService } from './../../services/sidebar.service';
 import { MediaMatcher } from '@angular/cdk/layout';
-import {
-  Component,
-  OnDestroy,
-  ChangeDetectorRef,
-  OnInit,
-  OnChanges,
-  SimpleChanges,
-  AfterViewChecked,
-} from '@angular/core';
-import { Router } from '@angular/router';
-
+import { Component, OnDestroy, ChangeDetectorRef, OnInit } from '@angular/core';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',

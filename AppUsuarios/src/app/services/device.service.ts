@@ -74,6 +74,8 @@ export class DeviceService {
   }
 
   stopCapture() {
+    if (!this.mediaRecorder) return alert('No se está grabando');
+
     if (this.cameraStream != null) {
       this.cameraStream.getTracks().forEach(function (track) {
         track.stop();
@@ -87,31 +89,31 @@ export class DeviceService {
     }
   }
 
-  isMediaDeviceValid() {
-    if (n.mediaDevices === undefined) {
-      n.mediaDevices.getUserMedia = function (constraintObj) {
-        let getUserMedia = navigator.webkitGetUserMedia || n.mozGetUserMedia;
-        if (!getUserMedia) {
-          return Promise.reject(
-            new Error('getUserMedia is not implemented in this browser')
-          );
-        }
-        return new Promise(function (resolve, reject) {
-          getUserMedia.call(n, constraintObj, resolve, reject);
-        });
-      };
-    } else {
-      n.mediaDevices
-        .enumerateDevices()
-        .then((devices) => {
-          devices.forEach((device) => {
-            console.log(device.kind.toUpperCase(), device.label);
-            //, device.deviceId
-          });
-        })
-        .catch((err) => {
-          console.log(err.name, err.message);
-        });
-    }
-  }
+  // isMediaDeviceValid() {
+  //   if (n.mediaDevices === undefined) {
+  //     n.mediaDevices.getUserMedia = function (constraintObj) {
+  //       let getUserMedia = n.mediaDevices.getUserMedia;
+  //       if (!getUserMedia) {
+  //         return Promise.reject(
+  //           new Error('getUserMedia is not implemented in this browser')
+  //         );
+  //       }
+  //       return new Promise(function (resolve, reject) {
+  //         getUserMedia.call(n, constraintObj, resolve, reject);
+  //       });
+  //     };
+  //   } else {
+  //     n.mediaDevices
+  //       .enumerateDevices()
+  //       .then((devices) => {
+  //         devices.forEach((device) => {
+  //           console.log(device.kind.toUpperCase(), device.label);
+  //           //, device.deviceId
+  //         });
+  //       })
+  //       .catch((err) => {
+  //         console.log(err.name, err.message);
+  //       });
+  //   }
+  // }
 }
